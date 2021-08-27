@@ -26,6 +26,7 @@ if (error) return "Your server isn't running, but at least you don't have to cat
 
     return (
         <>
+        <h3>LOCATIONS</h3>
             {
                 locations.map(location => <Location key={location.id} location={location} />)
             }
