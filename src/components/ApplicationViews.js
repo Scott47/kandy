@@ -11,7 +11,7 @@ export const ApplicationViews = () => {
     return (
         <>
         <Route exact path="/">
-            
+            <h2>Welcome to Kandy Korner</h2>
         </Route>
         <Route exact path="/locations">
             <LocationList />
