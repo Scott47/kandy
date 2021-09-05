@@ -26,6 +26,15 @@ export const getEmployees = () => {
                 throw res
             })
 }
+export const getCustomers = () => {
+    return fetch('http://localhost:8088/customers')
+            .then((res) => {
+                if (res.ok) {
+                    return res.json()
+                }
+                throw res
+            })
+}
 
 export const hireEmployee = (emp) => {
     const fetchOptions = {
