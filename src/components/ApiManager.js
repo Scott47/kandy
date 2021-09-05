@@ -17,3 +17,24 @@ export const getLocations = () => {
                 throw res
             })
 }
+export const getEmployees = () => {
+    return fetch('http://localhost:8088/employees?_expand=location')
+            .then((res) => {
+                if (res.ok) {
+                    return res.json()
+                }
+                throw res
+            })
+}
+
+export const hireEmployee = (emp) => {
+    const fetchOptions = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(emp)
+    }
+    return fetch(`http://localhost:8088/employees`, fetchOptions)
+        .then(response => response.json())
+}
