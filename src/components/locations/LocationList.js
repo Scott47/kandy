@@ -1,19 +1,14 @@
 import React, { useState, useEffect } from "react"
 import { Location } from "./Location"
+import { getLocations } from "../ApiManager"
 
 export const LocationList = () => {
-    const [ locations, setLocation ] = useState([])
+    const [ locations, setLocations ] = useState([])
     const [ error, setError ] = useState(null)
 
     useEffect(() => {
-        fetch('http://localhost:8088/locations')
-            .then((res) => {
-                if (res.ok) {
-                    return res.json()
-                }
-                throw res
-            })
-            .then((l) => setLocation(l))
+        getLocations()
+            .then((l) => setLocations(l))
             .catch(error => {
                 console.error("error getting locations:", error)
                 setError(error)
@@ -22,7 +17,7 @@ export const LocationList = () => {
         []
     )
 
-if (error) return "Your server isn't running, but at least you don't have to catch it."
+    if (error) return "Your server isn't running, but at least you don't have to catch it."
 
     return (
         <>
