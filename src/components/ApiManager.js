@@ -39,6 +39,16 @@ export const getCustomers = () => {
         })
 }
 
+export const getPurchases = () => {
+    return fetch('http://localhost:8088/purchases?_expand=product&_expand=employee')
+        .then((res) => {
+            if (res.ok) {
+                return res.json()
+            }
+            throw res
+        })
+}
+
 export const hireEmployee = (emp) => {
     const fetchOptions = {
         method: "POST",

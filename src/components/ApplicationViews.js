@@ -5,6 +5,7 @@ import { EmployeeList } from "./employees/EmployeeList"
 import { LocationList } from "./locations/LocationList"
 import { ProductList } from "./products/ProductList"
 import { CustomerList } from "./customers/CustomerList"
+import { CustomerOrders } from "./customers/CustomerOrders"
 
 export const ApplicationViews = () => {
 
@@ -27,6 +28,9 @@ export const ApplicationViews = () => {
             </Route>
             <Route exact path="/customers">
                 <CustomerList />
+            </Route>
+            <Route exact path="/myorders">
+                <CustomerOrders />
             </Route>
         </>
     )
