@@ -51,6 +51,18 @@ export const hireEmployee = (emp) => {
         .then(response => response.json())
 }
 
+export const purchaseKandy = (kandy) => {
+    const fetchOptions = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(kandy)
+    }
+    return fetch(`http://localhost:8088/purchases`, fetchOptions)
+        .then(response => response.json())
+}
+
 export const existingUserCheck = (email) => {
     return fetch(`http://localhost:8088/customers?email=${email}`)
         .then(res => res.json())

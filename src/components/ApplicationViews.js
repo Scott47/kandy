@@ -10,24 +10,24 @@ export const ApplicationViews = () => {
 
     return (
         <>
-        <Route exact path="/">
-            <h2>Welcome to Kandy Korner</h2>
-        </Route>
-        <Route exact path="/locations">
-            <LocationList />
-        </Route>
-        <Route exact path="/products">
-            <ProductList/>
-        </Route>
-        <Route path="/employees">
-            <EmployeeList />
-        </Route>
-        <Route exact path="/employee/create">
-            <NewEmployeeForm/>
-        </Route>
-        <Route exact path="/customers">
-            <CustomerList />
-        </Route>
+            <Route exact path="/">
+                <h2>Welcome to Kandy Korner</h2>
+            </Route>
+            <Route exact path="/locations">
+                <LocationList />
+            </Route>
+            <Route exact path="/products">
+                <ProductList />
+            </Route>
+            <Route path="/employees">
+                <EmployeeList />
+            </Route>
+            <Route exact path="/employee/create">
+                <NewEmployeeForm />
+            </Route>
+            <Route exact path="/customers">
+                <CustomerList />
+            </Route>
         </>
     )
 }
