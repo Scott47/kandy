@@ -3,8 +3,9 @@ import { getPurchases } from "../ApiManager"
 
 export const CustomerOrders = () => {
     const [purchases, setPurchases] = useState([])
+    const currentCustomer = +localStorage.getItem("kandy_customer")
 
-    useEffect(() => getPurchases().then((p) => setPurchases(p)))
+    useEffect(() => getPurchases(currentCustomer).then((p) => setPurchases(p)))
 
     return (
         <>

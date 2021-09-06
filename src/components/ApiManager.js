@@ -39,8 +39,8 @@ export const getCustomers = () => {
         })
 }
 
-export const getPurchases = () => {
-    return fetch('http://localhost:8088/purchases?_expand=product&_expand=employee')
+export const getPurchases = (id) => {
+    return fetch(`http://localhost:8088/purchases?_expand=product&customerId=${id}`)
         .then((res) => {
             if (res.ok) {
                 return res.json()
