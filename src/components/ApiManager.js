@@ -60,6 +60,12 @@ export const hireEmployee = (emp) => {
     return fetch(`http://localhost:8088/employees`, fetchOptions)
         .then(response => response.json())
 }
+export const fireEmployee = (id) => {
+    const fetchOptions = {
+        method: "DELETE",
+    }
+    return fetch(`http://localhost:8088/employees/${id}`, fetchOptions)
+}
 
 export const purchaseKandy = (kandy) => {
     const fetchOptions = {
